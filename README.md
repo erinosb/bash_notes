@@ -96,7 +96,7 @@ A single quote may not occur between single quotes, even when preceded by a back
 
 **Double Quotes**           **"**
 
-Enclosing characters in double quotes preserves the literal value of all characters within the quotes, with the exception of $, `, \, and sometimes !. The characters $ and ` retain their special meaning within double quotes. The backslash retains its special meaning only when followed by one of the following characters: $, `, ", \, or newline. Backslashes preceding characters without a special meaning are left unmodified. A double quote may be quoted within double quotes by preceding it with a backslash.
+Enclosing characters in double quotes preserves the literal value of all characters within the quotes, with the exception of $, \`, \, and sometimes !. The characters $ and \` retain their special meaning within double quotes. The backslash retains its special meaning only when followed by one of the following characters: $, \`, ", \, or newline. Backslashes preceding characters without a special meaning are left unmodified. A double quote may be quoted within double quotes by preceding it with a backslash.
 
 
 
