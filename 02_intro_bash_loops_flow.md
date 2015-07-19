@@ -25,10 +25,10 @@ That is perfectly fine to do! However, if you have 100 files, it may get kind of
 A while loop uses the format:
 
 
->while [ \<some test\> ]
->do
->    \<commands\>
->done
+>**while [** *\<some test\>* **]**   
+>**do**   
+>    *\<commands\>*   
+>**done**
 
 Typically, we start with a numberic counter, set it to 0, then start the loop. At the end of each pass through the loop we add one to our counter. The loop will run until the counter gets to be a certain size and then it stops. The way this works is like so:
 
@@ -52,16 +52,16 @@ Typically, we start with a numberic counter, set it to 0, then start the loop. A
 For loops come in two main flavors. The first is the C-style for loop. This is the way that C is written and people just kep doing it this way. It is similar to a while loop.
 
 In a while loop, we actually did three things:
-INITIALIZATION -- When we set counter=0, we initiated the counter.
-CONDITION -- When we checked whether $counter -lt 2, we were testing for a conditional statement
-AFTERTHOUGHT -- when we added 1 to $counter, this is called an afterthough.
++ INITIALIZATION -- When we set counter=0, we initiated the counter.
++ CONDITION -- When we checked whether $counter -lt 2, we were testing for a conditional statement
++ AFTERTHOUGHT -- when we added 1 to $counter, this is called an afterthough.
 
 Those three steps are used in a C-style for loop in a slightly different way, like so:
 
-for (INITIALIZATION; CONDITION; AFTERTHOUGHT) 
-do
-    <commands>
-done
+>**for ((** *\<INITIALIZATION\>; \<CONDITION\>; \<AFTERTHOUGHT\>* **))**   
+>**do**   
+>     *\<commands\>*   
+>**done**
 
 Here is an example of the same loop in a C-style:
 
@@ -85,12 +85,12 @@ If this doesn't make sense, just skip it.
 ### PYTHON-STYLE FOR LOOP.
 
 A python style for loop is MUCH easier! It takes the form:
-```
-for var in ${array[@]}
-do
-    <commands>
-done
-```
+
+>**for** *\<var\>* **in $\{***\<array\>***[@]\}**  
+>**do**   
+>    *\<commands\>*   
+>**done**   
+
 
 In this type of loop "for" is a command that is typed literally. "in" is also a command that is typed literally. "var" is a variable name you choose. <array> is an array variable you have probably already defined. "do" and "done" are also command words that are typed literally.
 
