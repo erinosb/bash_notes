@@ -2,7 +2,28 @@
 # Basic Bash Scripting Cheatsheet
 
 
+## Table of Contents
 
+**What is a bash script?**
+
+**Variables**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array Variables
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Variables
+
+**Quoting**
+
+**Commands**
+
+**Input**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hard wiring
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arguments
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading Standard Input
+____
 
 ## What is a bash script?
 A bash script is an excecutable file that contains a list of commands. A bash script's name is typically appended with the file extension .sh. The script is typically started with a shebang that answers the command line question 'which bash' and looks like so:
