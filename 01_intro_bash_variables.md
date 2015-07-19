@@ -23,6 +23,9 @@ ____
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Arguments](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#arguments)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Reading Standard Input](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#reading-standard-input)
+
+[**Output**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#output)
+
 ____
 
 ## What is a bash script?
@@ -294,4 +297,32 @@ You'll need to experiment with this a little bit, but the syntax is:
     echo "Ah! I also like $favoritefood."
 ```
 
+## Output
 
+There are a lot of ways to move information out of a bash script. Mostly, we've been usign echo or printf to do this. By using echo or printf we can print information to the screen. This screen is called STANDARD OUT also known as OUTPUT 1. In addition to printing to standard out, we can print to a file.
+
+To print to a file for the first time, Use 1> the redirect symbol:
+
+```bash
+    echo -e "This is s a test" 1>outputfile.txt
+```
+
+This will create a file called outputfile.txt and write the test "This is a test" to it. "This is a test" will not appear on the screen. 
+
+If you want to add more content to the end of outputfile.txt, use 1>> like so...
+
+```bash
+    echo -e "This is s a test" 1>outputfile.txt
+    echo -e "More content" 1>>outputfile.txt
+```
+
+Both lines will now appear in the file outputfile.txt.
+
+Sometimes you want things to print out to the screen and to the desired file. In this case, you can use a bit of a cumbersome chain of commands that looks like `| -a `:
+
+
+```bash
+    echo -e "still more to say"  | tee -a outputfile.txt
+```
+
+This will both print "still more to say" to the screen and append it to the output file.
