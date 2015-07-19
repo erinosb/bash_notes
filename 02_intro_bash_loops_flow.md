@@ -10,9 +10,7 @@ Let's say we have an array of items called files specified like so:
     files=(file1.txt file2.txt file3.txt)
 ```
 
-Files contains a list of files that are in our working directory. How would we do an operation on each file? One way to do this is to use a for loop.
-
-Well, we could easily just do this:
+Files contains a list of files that are in our working directory. How would we do an operation on each file?  Well, we could easily just do this:
 
 ```bash
     wc $files[0]
@@ -20,7 +18,7 @@ Well, we could easily just do this:
     wc $files[2]
 ```
 
-That is perfectly fine to do! However, if you have 100 files, it may get kind of old. And also, you might make a typing error somewhere. There are a few different ways to loop things, but the main ones are while loops and for loops. We will look at one kind of while loop and two kinds of for loops.
+That is perfectly fine to do. However, if you have 100 files, it may get kind of old. Also, you might make a typing error somewhere. A better way would be to use a loop. There are a few different kinds of loops but the main ones are **while loops** and **for loops**. We will look at one kind of while loop and two kinds of for loops.
 
 ### 1) While Loop
 
@@ -32,7 +30,7 @@ A while loop uses the format:
 >    *\<commands\>*   
 >**done**
 
-Typically, we start with a numberic counter, set it to 0, then start the loop. At the end of each pass through the loop we add one to our counter. The loop will run until the counter gets to be a certain size and then it stops. The way this works is like so:
+Typically, start with a numberic counter, set it to 0, then start the loop. At the end of each pass through the loop increment the counter by one. The loop will run until the counter gets to be a certain size that fails the test and then it stops. The way this works is like so:
 
 ```bash
     files=(file1.txt file2.txt file3.txt)
@@ -49,9 +47,27 @@ Typically, we start with a numberic counter, set it to 0, then start the loop. A
 ```
 
 
+This loop outputs the following:
+```
+0
+file1.txt
+      15      13      47 file1.txt
+
+
+1
+file2.txt
+       5       5      36 file2.txt
+
+
+2
+file3.txt
+       4       3      24 file3.txt
+```
+For each pass through the loop, it prints what $counter represents, it prints the element within the files array that corresponds to the number that $counter represents, and it counts the words within that file.
+
 ### 2) C-style for loop
 
-For loops come in two main flavors. The first is the C-style for loop. This is the way that C is written and people just kep doing it this way. It is similar to a while loop.
+For loops come in two main flavors. The first is the C-style for loop. This is the way that C is written and people just kept doing it this way. It is similar to a while loop. I personally, don't use C-style loops very often, but they are useful to illustrate that while loops and for loops do the same thing.
 
 In a while loop, we actually did three things:
 + INITIALIZATION -- When we set counter=0, we initiated the counter.
@@ -80,8 +96,8 @@ Here is an example of the same loop in a C-style:
     done
 ```
     
-The syntax is very special within the double parentheses because it is basically mimicing "C".
-If this doesn't make sense, just skip it.
+The syntax within the double parentheses is very special because it is basically mimicking "C". Don't worry if it seems to look weird.
+If this doesn't make sense, just skip it and move on to Python-style loops. You can totally live without C-style loops.
 
 
 ### 3) Python-style loop
@@ -109,7 +125,29 @@ An example of a python style C loop is:
     done
 ```
 
+This gives the following output. Notice we get to skip the counter altogether:
+
+```
+file1.txt
+      15      13      47 file1.txt
+
+
+file2.txt
+       5       5      36 file2.txt
+
+
+file3.txt
+       4       3      24 file3.txt
+```
+
+The python-style for loop is probably the most common loop you'll end up using. However, there are times when having a counter can come in useful. So it is not ideal for all tasks.
+
+
 ## Flow control
+
+Imagine the way that your commands are executed through a bash script. The script starts at the top and executes commands going down the script to the bottom. In the "loops" section, we learned how a script can start at the top, flow down to a loop, spin around in a loop, and then continue on to the bottom of a script.
+
+There are other ways to optimize the path command execution takes through a script. Flow control involves skipping over different sections. In flow control, we can conditionally execute blocks of code or ignore them entirely. 
 
 ### 1) If
 
