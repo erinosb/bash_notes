@@ -230,14 +230,16 @@ In addition, you can **capture** the output of a command into a variable! Cool! 
 
 ## Input
 
+Getting things into and out of a shell script is really important. There are many ways to get information into shell scripts. Mostly, the only information we give shell scripts are alphanumeric names of things. 
+
 ### Hard wiring
-Getting things into and out of a shell script is really important. There are many ways to get information into shell scripts. Mostly, the only information we give shell scripts are alphanumeric names of things. We can do this by typing things into the script itself.
+One, maybe obvious, way we can get information into a script is simply by typing it in there. For example, if I want to tell a script to count the lines in a document called file1.txt, I can just write it that way, like so:
 
 ```bash
     wc file1.txt
 ```
 
-That's easy. I just wrote file1.txt into the code. But what if I want to change the file to count without re-writing my code? I'll need better, more interactive strategies for this. There are a few ways to do this, but the most popular is probably taking arguments on the command line:
+That's easy. I just wrote file1.txt into the code. But what if I want to change the file to count without re-writing my code? I'll need a better, more interactive strategy. The most popular is taking arguments on the command line:
 
 ### Arguments
 
@@ -257,21 +259,14 @@ If we look inside the counter.sh script, it will look like this:
 
 ### Reading Standard Input
 
+Standard input is anything the user types into the computer at the keyboard. You can prompt the user for standard input using a command called ```bash read```.
+
+You'll need to experiment with this a little bit, but the syntax is:
+
+```bash
+    echo "what is your favorite food?"
+    read favoritefood
+    echo "Ah! I also like $favoritefood."
+```
 
 
-
-## Loops
-
-### for loop -- python style
-
-### for loop -- C Style
-
-### while loop
-
-## Flow control
-
-### If
-
-### Elsif
-
-### Else
