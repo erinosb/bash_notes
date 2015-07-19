@@ -266,6 +266,8 @@ That's easy. I just wrote file1.txt into the code. But what if I want to change 
 
 Let's say we have a file called file2.txt which is 10 lines long. Let's say we want to write a script that will count the number of lines in this file. We can write a script called counter.sh that takes the file name as an argument. This is done like so...
 
+> **$ bash** *\<scriptname.sh\>* *[firstArgument]* *[secondArgument]*
+
 ```
 $ bash counter.sh file2.txt
 ```
@@ -278,9 +280,11 @@ If we look inside the counter.sh script, it will look like this:
     wc $1       #output: the word count of any file given as the first argument to the script
 ```
 
+This works because $1 is a special character that stands in for the first argument given on the command line. Anything that comes after the script's name and a space, will be captured as $1 and sent into the script as $1.
+
 #### Reading Standard Input
 
-Standard input is anything the user types into the computer at the keyboard. You can prompt the user for standard input using a command called ```bash read```.
+Standard input is anything the user types into the computer at the keyboard. You can prompt the user for standard input using a command called `read`.
 
 You'll need to experiment with this a little bit, but the syntax is:
 
