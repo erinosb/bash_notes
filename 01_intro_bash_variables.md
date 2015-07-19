@@ -318,7 +318,7 @@ If you want to add more content to the end of outputfile.txt, use 1>> like so...
 
 Both lines will now appear in the file outputfile.txt.
 
-Sometimes you want things to print out to the screen and to the desired file. In this case, you can use a bit of a cumbersome chain of commands that looks like `| -a `:
+Sometimes you want things to print out to the screen and to the desired file. In this case, you can use a  chain of commands that looks like `| tee -a `:
 
 
 ```bash
