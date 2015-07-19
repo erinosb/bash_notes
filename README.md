@@ -42,7 +42,7 @@ For example
 If you were to execute this script, it would look like this:
 
     $ bash assignVariable.sh
-    "value"
+    value
 
 Values can be letters, numbers, symbols, spaces, special characters, returns, etc. Simple things can be assigned without quotes, but complex things (especially spaces) require quotes.
 
@@ -74,14 +74,74 @@ Which outputs:
     Rich is the man whose needs are met and whose wants are few.
 ```
 
+Variables can be re-assigned with new values at any time. Because bash scripts are read from top to bottom, the variable will have the new value in any lines below the reassignment:
 
-### array variables
+```bash
+    favoriteBook="Jane Eyre"
+    echo "my favorite book is $favoriteBook"
+    
+    favoriteBook="Midnight's Children"
+    
+    echo "my new favorite book is $favoriteBook"
+    
+```
 
-A variable is a data structure. It is a way we store information. Most programming languages have several well-defined types of data structures. They have scalars (a single string of alphanumeric characters), arrays (ordered lists of alphanumeric characters), hashes (unordered pairs of keys and values), and many other complex types of data structures. Bash is way more simplistic than that. There are really just straight up variables. However, these variables come in two flavors. Regular old singleton varaibles have one value for each variable name. Arrays, on the other hand, are an ordered list of values that are assigned to one variable name.
+This script outputs:
+
+```
+    my favorite book is Jane Eyre
+    my new favorite book is Midnight's Children
+```
+
+### Array Variables
+
+So far, we have seen one value be assigned to each varaible names. We can also assign multiple, ordered values to a single variable name. These create array varaibles. Arrays are zero-based: the first element is indexed with the number 0. There is no maximum limit to the size of an array, nor any requirement that member variables be indexed or assigned contiguously. 
+
+To assign array variables, we use parentheses:
+
+```
+    arrayname=(value1 value2 value3 value4)
+```
+
+This array has four values, also called elements.
+To see all elements, we use this syntax:
+
+```
+    echo ${arrayname[*]}    #outputs: value1 value2 value3 value4
+```
+
+Alternatively, you can populate an array using the 'index number'. Here is an array variable called "cities" with multiple values set to the names of local cities:
+
+```
+    cities[0]="Chapel Hill"
+    cities[1]="Durham"
+    cities[2]="Apex"
+```
+
+We can access this array, again using an echo statement and an * but you can also access any value using the index number as well...
+
+```
+    echo ${cities[*]}           #outputs:   Chapel Hill Durham Apex
+    echo ${cities[0]}           #outputs:   Chapel Hill
+    echo ${cities[2]}           #outputs:   Apex
+```
+
+**Tips on naming variables (arrays or regular)**
++ First character should be a character
++ Following characters can be characters or numerals
++ Avoid any special/weird characters
++ Avoid all caps
+    + Environmental variables in bash are in all caps
+    + To see environmental variables list:
+    + $ printenv
+    + $ echo $PATH
 
 
 
-## Special Variables
+
+### Special Variables
+
+Some variables are already made for you. Some of these, like environmental variables existed before you even started your script. These are variables like $PATH and other variables that printout when you type $ prinenv. Other variables are initiated when you execute your code. These special variables are useful for getting information into your script.
 
 $0 - The name of the Bash script
 
@@ -94,6 +154,21 @@ $@ - All the arguments supplied to the Bash script
 $* - All the arguments supplied to the Bash script
 
 $? - The exit status of the most recently run process
+
+For example, if you executed your code like so...
+```
+    user:erin$ bash testcode.sh file1.txt file2.txt file3.txt
+```
+
+Then, 
+
+```bash
+    echo $0         #outputs: testcode.sh
+    echo $1         #outputs: file1.txt
+    echo $2         #outputs: file1.txt
+    echo $@         #outputs: file1.txt file2.txt file3.txt
+    echo $#         #outputs: 3
+```
 
 
 ## Quoting
@@ -123,12 +198,21 @@ A single quote may not occur between single quotes, even when preceded by a back
 
 Enclosing characters in double quotes preserves the literal value of all characters within the quotes, with the exception of $, \`, \, and sometimes !. The characters $ and \` retain their special meaning within double quotes. The backslash retains its special meaning only when followed by one of the following characters: $, \`, ", \, or newline. Backslashes preceding characters without a special meaning are left unmodified. A double quote may be quoted within double quotes by preceding it with a backslash.
 
+To illustrate the difference between single and double quotes, check this out:
+
+```bash
+    color=red
+    favoritecolor=$color
+    echo $favoritecolor         #outputs:   red
+    
+    favoritecolor='$color'
+    echo $favoritecolor         #outputs:   $color
+    
+    favoritecolor="$color"
+    echo $favoritecolor         #outputs:   red
+```
 
 
-
-
-
-### special variables
 
 ## Loops
 
