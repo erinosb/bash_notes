@@ -6,11 +6,11 @@
 
 [**What is a bash script?**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#what-is-a-bash-script)
 
-**Variables**
+[**Variables**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#variables)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Array Variables
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Array Variables](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#array-variables)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Variables
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Special Variables](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#special-variables)
 
 **Quoting**
 
