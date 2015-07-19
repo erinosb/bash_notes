@@ -5,22 +5,21 @@
 
 
 ## What is a bash script?
-A bash script is an excecutable file that contains a list of commands. A bash script's name is typically appended with the file extension .sh. The script is typically started with a shebang that answers the command line question 'which bash' and looks like so:
+A bash script is an excecutable file that contains a list of commands. A bash script's name is typically appended with the file extension .sh. The script is typically started with a shebang. A shebang starts with #! and ends with the answer to the command line question 'which bash':
 
 ```bash
 #!/bin/bash
 ```
     
-With minor exceptions, anything you can run normally on the command line can be put into a script and it will do exactly the same thing.
-Similarly, anything you can put into a script can also be run normally on the command line.
+With minor exceptions, anything you can run on the command line can run in a script.
 
 
 ## Variables
 
-Variables are placeholders for information. The information can either stay constant throughout the script, change every time the script is initiated, or change multiple times within the script. Variables help us to keep track of information by giving long things short names (nicknames) or by keeping track of something even though it may change thoroughout the script.
+Variables are placeholders for information. The information can either stay constant throughout the script, change every time the script is initiated, or change multiple times within the script. Variables help us to keep track of information by assigning a nickname to things with long names, or by keeping track of something that may change value.
 
 
-Basically, a variable is just a name that is given to a value. Values are assigned to their variable names using the syntax
+Variable names are how you call the value. You pick the variable name and you pick the value. You assign values to their variable names using the syntax:
 
     varname="value"
     
@@ -42,7 +41,7 @@ For example
 If you were to execute this script, it would look like this:
 
     $ bash assignVariable.sh
-    "value"
+    value
 
 Values can be letters, numbers, symbols, spaces, special characters, returns, etc. Simple things can be assigned without quotes, but complex things (especially spaces) require quotes.
 
@@ -75,11 +74,22 @@ Which outputs:
 ```
 
 
-### array variables
+### Array Variables
 
-A variable is a data structure. It is a way we store information. Most programming languages have several well-defined types of data structures. They have scalars (a single string of alphanumeric characters), arrays (ordered lists of alphanumeric characters), hashes (unordered pairs of keys and values), and many other complex types of data structures. Bash is way more simplistic than that. There are really just straight up variables. However, these variables come in two flavors. Regular old singleton varaibles have one value for each variable name. Arrays, on the other hand, are an ordered list of values that are assigned to one variable name.
+We have seen that Variables can be assigned one value but that is not all bash can do. Variables can also be assigned multiple ordered values. These are called arrays in other programming languages. An array is a variable containing multiple values. Any variable may be used as an array. There is no maximum limit to the size of an array, nor any requirement that member variables be indexed or assigned contiguously. Arrays are zero-based: the first element is indexed with the number 0.
 
+Arrays are specified using parentheses.
 
+```
+    arrayname=(value1 value2 value3)
+```
+
+echo all the elements of an array using 
+
+```
+    ${arrayname[*]}
+```
+    --->    value1 value2 value3
 
 ## Special Variables
 
