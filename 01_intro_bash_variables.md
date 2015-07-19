@@ -50,7 +50,7 @@ Values can be letters, numbers, symbols, spaces, special characters, returns, et
 
 ```bash
     homeDir="/nas02/home/e/r/erinosb"
-    favoriteNumber=24
+    favoriteNumber=42
     favoriteLetter="X"
     favoriteQuote="Rich is the man whose needs are met and whose wants are few."
 ```
@@ -69,7 +69,7 @@ Which outputs:
 
 ```
     /nas02/home/e/r/erinosb
-    24
+    42
     X
     Rich is the man whose needs are met and whose wants are few.
 ```
@@ -141,23 +141,18 @@ We can access this array, again using an echo statement and an * but you can als
 
 ### Special Variables
 
-Some variables are already made for you. Some of these, like environmental variables existed before you even started your script. These are variables like $PATH and other variables that printout when you type $ prinenv. Other variables are initiated when you execute your code. These special variables are useful for getting information into your script.
+Some variables are already made for you. Some of these, like environmental variables existed before you even started your script. These are variables like $PATH and other variables that printout when you type $ prinenv. Other variables are initiated when you execute your code. These special variables are useful for accessing any arguments that you supplied when you executed your script.
 
-$0 - The name of the Bash script
-
-$1 - $9 - The first 9 arguments to the Bash script
-
-$# - How many arguments were passed to the Bash script
-
-$@ - All the arguments supplied to the Bash script
-
-$* - All the arguments supplied to the Bash script
-
-$? - The exit status of the most recently run process
++ $0 - The name of the Bash script
++ $1 - $9 - The first 9 arguments to the Bash script
++ $# - How many arguments were passed to the Bash script
++ $@ - All the arguments supplied to the Bash script
++ $* - All the arguments supplied to the Bash script
++ $? - The exit status of the most recently run process
 
 For example, if you executed your code like so...
 ```
-    user:erin$ bash testcode.sh file1.txt file2.txt file3.txt
+    $ bash testcode.sh file1.txt file2.txt file3.txt
 ```
 
 Then, 
@@ -165,8 +160,9 @@ Then,
 ```bash
     echo $0         #outputs: testcode.sh
     echo $1         #outputs: file1.txt
-    echo $2         #outputs: file1.txt
+    echo $2         #outputs: file2.txt
     echo $@         #outputs: file1.txt file2.txt file3.txt
+    echo $*         #outputs: file1.txt file2.txt file3.txt
     echo $#         #outputs: 3
 ```
 
@@ -187,7 +183,8 @@ var=23
 echo "$var"   #outputs    23
 echo "\$var"  #outputs    $var
 ```
-    
+
+
 **Single Quotes**          **'**
 
 Enclosing characters in single quotes preserves the literal value of each character within the quotes.
@@ -211,6 +208,55 @@ To illustrate the difference between single and double quotes, check this out:
     favoritecolor="$color"
     echo $favoritecolor         #outputs:   red
 ```
+
+## Commands
+
+Any shell command you give on the command line should work inside of a bash script.
+You can execute any command simply by listing it on its own line:
+
+```bash
+    ls                  #output: will list the contents of the current working directory
+    date                #output: will spit out the date
+    wc file1.txt        #output: will count the number of lines in file1.txt IF file1.txt is in your working directory.
+```
+
+In addition, you can **capture** the output of a command into a variable! Cool! To do so, use $().
+
+```bash
+    contents=$(ls)
+    echo $contents      #output: will list the contents of the current working directory
+```
+
+
+## Input
+
+### Hard wiring
+Getting things into and out of a shell script is really important. There are many ways to get information into shell scripts. Mostly, the only information we give shell scripts are alphanumeric names of things. We can do this by typing things into the script itself.
+
+```bash
+    wc file1.txt
+```
+
+That's easy. I just wrote file1.txt into the code. But what if I want to change the file to count without re-writing my code? I'll need better, more interactive strategies for this. There are a few ways to do this, but the most popular is probably taking arguments on the command line:
+
+### Arguments
+
+Let's say we have a file called file2.txt which is 10 lines long. Let's say we want to write a script that will count the number of lines in this file. We can write a script called counter.sh that takes the file name as an argument. This is done like so...
+
+```
+    $ bash counter.sh file2.txt
+```
+
+If we look inside the counter.sh script, it will look like this:
+
+```bash
+    #!/bin/bash
+    
+    wc $1       #output: the word count of any file given as the first argument to the script
+```
+
+### Reading Standard Input
+
 
 
 
