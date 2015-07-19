@@ -152,7 +152,7 @@ Some variables are already made for you. Some of these, like environmental varia
 
 For example, if you executed your code like so...
 ```
-    $ bash testcode.sh file1.txt file2.txt file3.txt
+$ bash testcode.sh file1.txt file2.txt file3.txt
 ```
 
 Then, 
@@ -246,7 +246,7 @@ That's easy. I just wrote file1.txt into the code. But what if I want to change 
 Let's say we have a file called file2.txt which is 10 lines long. Let's say we want to write a script that will count the number of lines in this file. We can write a script called counter.sh that takes the file name as an argument. This is done like so...
 
 ```
-    $ bash counter.sh file2.txt
+$ bash counter.sh file2.txt
 ```
 
 If we look inside the counter.sh script, it will look like this:
