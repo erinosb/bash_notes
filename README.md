@@ -20,7 +20,33 @@ Similarly, anything you can put into a script can also be run normally on the co
 Variables are placeholders for information. The information can either stay constant throughout the script, change every time the script is initiated, or change multiple times within the script. Variables help us to keep track of information by giving long things short names (nicknames) or by keeping track of something even though it may change thoroughout the script.
 
 
-Basically, a variable is just a name that is given to a value. Values are assigned to their variable names using the syntax:
+Basically, a variable is just a name that is given to a value. Values are assigned to their variable names using the syntax
+
+    varname="value"
+    
+And then the value can be accessed by calling the variable using a dollar sign in front of it like so:
+
+    echo $varname
+    
+For example
+
+```bash
+    #!/bin/bash
+    
+    #this is a script name assignVariable.sh
+    
+    varname="value"
+    echo $varname
+```
+
+If you were to execute this script, it would look like this:
+
+    $ bash assignVariable.sh
+    "value"
+
+Values can be letters, numbers, symbols, spaces, special characters, returns, etc. Simple things can be assigned without quotes, but complex things (especially spaces) require quotes.
+
+**Note! Don't put any spaces on either side of the = sign! This will result in an error and your variable will not be assigned the value you want.**
 
 ```bash
     homeDir="/nas02/home/e/r/erinosb"
@@ -29,7 +55,6 @@ Basically, a variable is just a name that is given to a value. Values are assign
     favoriteQuote="Rich is the man whose needs are met and whose wants are few."
 ```
 
-**Note! Don't put any spaces on either side of the = sign! This will result in an error and your variable will not be assigned the value you want.**
 
 To access the varaible, use its symbol $variable
 
