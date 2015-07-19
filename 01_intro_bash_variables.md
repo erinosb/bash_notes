@@ -2,7 +2,7 @@
 # Basic Bash Scripting Cheatsheet
 
 
-## Table of Contents
+____
 
 [**What is a bash script?**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#what-is-a-bash-script)
 
@@ -12,17 +12,17 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Special Variables](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#special-variables)
 
-**Quoting**
+[**Quoting**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#quoting)
 
-**Commands**
+[**Commands**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#commands)
 
-**Input**
+[**Input**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#input)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hard wiring
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Hard wiring](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#hard-wiring)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arguments
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Arguments](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#arguments)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading Standard Input
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Reading Standard Input](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#reading-standard-input)
 ____
 
 ## What is a bash script?
@@ -253,7 +253,7 @@ In addition, you can **capture** the output of a command into a variable! Cool! 
 
 Getting things into and out of a shell script is really important. There are many ways to get information into shell scripts. Mostly, the only information we give shell scripts are alphanumeric names of things. 
 
-### Hard wiring
+#### Hard wiring
 One, maybe obvious, way we can get information into a script is simply by typing it in there. For example, if I want to tell a script to count the lines in a document called file1.txt, I can just write it that way, like so:
 
 ```bash
@@ -262,7 +262,7 @@ One, maybe obvious, way we can get information into a script is simply by typing
 
 That's easy. I just wrote file1.txt into the code. But what if I want to change the file to count without re-writing my code? I'll need a better, more interactive strategy. The most popular is taking arguments on the command line:
 
-### Arguments
+#### Arguments
 
 Let's say we have a file called file2.txt which is 10 lines long. Let's say we want to write a script that will count the number of lines in this file. We can write a script called counter.sh that takes the file name as an argument. This is done like so...
 
@@ -278,7 +278,7 @@ If we look inside the counter.sh script, it will look like this:
     wc $1       #output: the word count of any file given as the first argument to the script
 ```
 
-### Reading Standard Input
+#### Reading Standard Input
 
 Standard input is anything the user types into the computer at the keyboard. You can prompt the user for standard input using a command called ```bash read```.
 
