@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-[**What is a bash script?**](http://github.com/erinosb/bash_notes/01_intro_bash_variables.md#what-is-a-bash-script)
+[**What is a bash script?**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#what-is-a-bash-script)
 
 **Variables**
 
