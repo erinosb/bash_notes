@@ -1,5 +1,7 @@
 # Bash Scripting Cheatsheet
 
+## A word about tests
+
 ## Loops
 
 Let's say we have an array of items called files specified like so:
@@ -47,7 +49,7 @@ Typically, we start with a numberic counter, set it to 0, then start the loop. A
 ```
 
 
-### C-style for loop
+### 2) C-style for loop
 
 For loops come in two main flavors. The first is the C-style for loop. This is the way that C is written and people just kep doing it this way. It is similar to a while loop.
 
@@ -82,7 +84,7 @@ The syntax is very special within the double parentheses because it is basically
 If this doesn't make sense, just skip it.
 
 
-### PYTHON-STYLE FOR LOOP.
+### 3) Python-style loop
 
 A python style for loop is MUCH easier! It takes the form:
 
@@ -109,8 +111,8 @@ An example of a python style C loop is:
 
 ## Flow control
 
-### If
+### 1) If
 
-### Elsif
+### 2) Elsif
 
-### Else
+### 3) Else
