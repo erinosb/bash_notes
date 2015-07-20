@@ -326,3 +326,40 @@ Sometimes you want things to print out to the screen and to the desired file. In
 ```
 
 This will both print "still more to say" to the screen and append it to the output file.
+
+## Substring replacement
+A series of numbers, letters, special characters, and spaces is called a **string**. Variables often point to values that are strings. Sometimes we want to do operations on those strings. We can do this using sub-string operations on variables.
+
+Some cool tricks:
+
+
+>**$***\<newvarname\>***=${***\<varname\>***:***\<n\>***}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $var string starting at nth letter.  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar:3}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "ifornia"  
+>  
+>**$***\<newvarname\>***=${***\<varname\>***:***\<n\>***:***\<length\>***}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $oldvar string starting at nth letter and going for "length" letters.  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar:3:4}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "ifor"  
+>   
+>**$***\<newvarname\>***=${***\<varname\>***/***\<pattern\>***/***\<replacement\>***}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces one instance of "pattern" in $oldvar with "replacement".  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar/nia/nian}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "Californian"  
+>   
+>**$***\<newvarname\>***=${***\<varname\>***//***\<pattern\>***/***\<replacement\>***}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces **ANY** instance of "pattern" in $oldvar with "replacement".  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar//a/A}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "CAliforniA"  
+>   
+>**$***\<newvarname\>***=${***\<varname\>***/#***\<pattern\>***/***\<replacement\>***}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces "pattern" at the BEGINNING of the string $oldvar with "replacement".  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar/To/So}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "To be or not to be" $newvar is "So be or not to be"  
+>
+>**$***\<newvarname\>***=${***\<varname\>***/%***\<pattern\>***/***\<replacement\>***}** 
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces "pattern" at the END of the string $oldvar with "replacement".  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar/txt/fastq}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "file1.txt" $newvar is "file1.fastq"  
+>
