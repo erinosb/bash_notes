@@ -119,6 +119,20 @@ This script outputs:
     my new favorite book is Midnight's Children
 ```
 
+### Capturing output as variables
+
+You can capture the output of a command as a variable like so:
+
+```bash
+variable=$(date)
+```
+
+You can capture the output of a numerical operation as a variable with double parentheses like so:
+
+```bash
+variable=$((49 + 50))
+```
+
 ### Array Variables
 
 So far, we have seen one value be assigned to each varaible names. We can also assign multiple, ordered values to a single variable name. These create array varaibles. Arrays are zero-based: the first element is indexed with the number 0. There is no maximum limit to the size of an array, nor any requirement that member variables be indexed or assigned contiguously. 
