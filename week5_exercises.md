@@ -63,8 +63,13 @@ The variable $favoriteEnzyme has the value ____.
 + You'll need to read about [sub-string replacements](https://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#substring-replacement) to answer this question.
 
 ## Homework exercise-5-2
++ Write a script called **TxtToFastq.sh** that takes in an a text file (file1.txt) as an argument and prints to the screen the name **file1.fastq**.
++ This seems like it should be easy but it is a little tricky for one reason... bash gets confused about how to *echo* or *printf* things that have characters right next to the output with no spaces.
++ Try using the notation ${variable} instead of $variable when you *echo* or *prinf* and see whether this helps.
+
+## Homework exercise-5-3
 + Imaginge you have a tab delimited file or a comma delimited file. These files typically contain spread-sheet like data. You can save a 'column' of information as an array by combining the 'cut' function with the notation:
-    + array=($(<command>))
+    + array=($(\<command\>))
 + Can you save a column of information as an array? Make sure to test that you have captured the expected number of individual elements. Also test that ${array[1]} gives you what you expect. 
 + If you need a sample file, try Scerevisiae_TFs.csv from a previous homework exercise.
 
