@@ -26,6 +26,8 @@ ____
 
 [**Output**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#output)
 
+[**Substring Replacement**](http://github.com/erinosb/bash_notes/blob/master/01_intro_bash_variables.md#substring-replacement)
+
 ____
 
 ## What is a bash script?
@@ -334,32 +336,32 @@ Some cool tricks:
 
 
 >**$***\<newvarname\>***=${***\<varname\>***:***\<n\>***}**  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $var string starting at nth letter.  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar:3}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $var string starting at nth letter. 
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar:3}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "ifornia"  
 >  
 >**$***\<newvarname\>***=${***\<varname\>***:***\<n\>***:***\<length\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $oldvar string starting at nth letter and going for "length" letters.  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar:3:4}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar:3:4}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "ifor"  
 >   
 >**$***\<newvarname\>***=${***\<varname\>***/***\<pattern\>***/***\<replacement\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces one instance of "pattern" in $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar/nia/nian}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar/nia/nian}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "Californian"  
 >   
 >**$***\<newvarname\>***=${***\<varname\>***//***\<pattern\>***/***\<replacement\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces **ANY** instance of "pattern" in $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar//a/A}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar//a/A}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "CAliforniA"  
 >   
 >**$***\<newvarname\>***=${***\<varname\>***/#***\<pattern\>***/***\<replacement\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces "pattern" at the BEGINNING of the string $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar/To/So}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar/#To/So}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "To be or not to be" $newvar is "So be or not to be"  
 >
 >**$***\<newvarname\>***=${***\<varname\>***/%***\<pattern\>***/***\<replacement\>***}** 
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces "pattern" at the END of the string $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: $newvar=${oldvar/txt/fastq}  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar/%txt/fastq}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "file1.txt" $newvar is "file1.fastq"  
 >
