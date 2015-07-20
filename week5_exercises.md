@@ -54,7 +54,16 @@ The variable $favoriteMovie has the value ____.
 The variable $favoriteEnzyme has the value ____.
 ```
 
+## Homework exercise-5-1
 
++ Download the file microscopy.tar.gz from the [week5 wepage](http://onish.web.unc.edu/week5)
++ Unpackage the tarball and navigate into the directory.
++ This directory contains some pretend microscopy data. Microscopes often take z-stacked images of time course data and save each image as a file. The files typically have some name that includes the stack, the time, and the sample name. Inspect the names of these 'files'.
++ There is also a bash script included. Read the bash script and try to modify it as suggested in the last line of the script.
+
+## Homework exercise-5-2
+
++ 
 
 
 
