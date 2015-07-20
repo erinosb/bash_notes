@@ -60,10 +60,13 @@ The variable $favoriteEnzyme has the value ____.
 + Unpackage the tarball and navigate into the directory.
 + This directory contains some pretend microscopy data. Microscopes often take z-stacked images of time course data and save each image as a file. The files typically have some name that includes the stack, the time, and the sample name. Inspect the names of these 'files'.
 + There is also a bash script included. Read the bash script and try to modify it as suggested in the last line of the script.
++ You'll need to read about [sub-string replacements](https://github.com/erinosb/bash_notes/glob/) to answer this question.
 
 ## Homework exercise-5-2
-
-+ 
++ Imaginge you have a tab delimited file or a comma delimited file. These files typically contain spread-sheet like data. You can save a 'column' of information as an array by combining the 'cut' function with the notation:
+    + array=($(<command>))
++ Can you save a column of information as an array? Make sure to test that you have captured the expected number of individual elements. Also test that ${array[1]} gives you what you expect. 
++ If you need a sample file, try Scerevisiae_TFs.csv from a previous homework exercise.
 
 
 
