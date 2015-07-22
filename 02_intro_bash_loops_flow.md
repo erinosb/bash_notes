@@ -1,15 +1,15 @@
 # Bash Scripting Cheatsheet
 
-**[Loops]   
-&emsp;&emsp;&emsp;&emsp;1) While Loop   
-&emsp;&emsp;&emsp;&emsp;2) C-style for loop   
-&emsp;&emsp;&emsp;&emsp;3) Python-style loop   
-A word about tests   
-Flow Control   
-&emsp;&emsp;&emsp;&emsp;1) If   
-&emsp;&emsp;&emsp;&emsp;2) Elif   
-&emsp;&emsp;&emsp;&emsp;3) Else   
-Case**   
+**[Loops](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#loops)   
+&emsp;&emsp;&emsp;&emsp;[1) While Loop](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-while-loop)    
+&emsp;&emsp;&emsp;&emsp;[2) C-style for loop](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#2-c-style-for-loop)   
+&emsp;&emsp;&emsp;&emsp;[3) Python-style for loop](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#3-python-style for loop)   
+[A word about tests](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#a-word-about-tests)   
+[Flow Control](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#flow-control)   
+&emsp;&emsp;&emsp;&emsp;[1) If](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-if)    
+&emsp;&emsp;&emsp;&emsp;[2) Elif](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-elif)   
+&emsp;&emsp;&emsp;&emsp;[3) Else](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-else)   
+[Case](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#case)**   
 
 
 
@@ -111,7 +111,7 @@ The syntax within the double parentheses is very special because it is basically
 If this doesn't make sense, just skip it and move on to Python-style loops. You can totally live without C-style loops.
 
 
-### 3) Python-style loop
+### 3) Python-style for loop
 
 A python style for loop is MUCH easier! It takes the form:
 
@@ -226,3 +226,5 @@ If you want to have things a littl e more complicated, use ELIF after IF stateme
 >**else**    
 >&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
 >**fi**   
+
+## Case
