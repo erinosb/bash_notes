@@ -160,18 +160,18 @@ In that exampel `[$counter -le 2]` is a test. If $counter points to a value less
 
 When we start doing *if* and *else* statements, we'll do more tests. Here are some tests that can go between square brackets:
 
-! *\<EXPRESSION\>*              # The EXPRESSION is false.   
--n *\<STRING\>*                 # The length of STRING is greater than zero.   
--z *\<STRING\>*	                # The lengh of STRING is zero (ie it is empty).   
-*\<STRING1\>* = *\<STRING2\>*	# STRING1 is equal to STRING2   
-*\<STRING1\>* != *\<STRING2\>*            # STRING1 is not equal to STRING2   
-*\<INTEGER1\>* -eq *\<INTEGER2\>*	# INTEGER1 is numerically equal to INTEGER2   
-*\<INTEGER1\>* -gt *\<INTEGER2\>*	# INTEGER1 is numerically greater than INTEGER2   
-*\<INTEGER1\>* -lt *\<INTEGER2\>*	# INTEGER1 is numerically less than INTEGER2   
-*\<INTEGER1\>* -ge *\<INTEGER2\>*	# INTEGER1 is numerically greater than or equal to INTEGER2   
-*\<INTEGER1\>* -le *\<INTEGER2\>*	# INTEGER1 is numerically less than or equal to INTEGER2   
--e *\<FILE\>*	                            # FILE exists.    
--s *\<FILE\>*               # FILE exists and it's size is greater than zero (ie. it is not empty).   
+! *\<EXPRESSION\>*&emsp;&emsp;&emsp;&emsp; # The EXPRESSION is false.   
+-n *\<STRING\>* &emsp;&emsp;&emsp;&emsp;# The length of STRING is greater than zero.   
+-z *\<STRING\>*&emsp;&emsp;&emsp;&emsp;# The lengh of STRING is zero (ie it is empty).   
+*\<STRING1\>* = *\<STRING2\>*&emsp;&emsp;&emsp;&emsp;# STRING1 is equal to STRING2   
+*\<STRING1\>* != *\<STRING2\>*&emsp;&emsp;&emsp;&emsp;# STRING1 is not equal to STRING2   
+*\<INTEGER1\>* -eq *\<INTEGER2\>*&emsp;&emsp;&emsp;&emsp;# INTEGER1 is numerically equal to INTEGER2   
+*\<INTEGER1\>* -gt *\<INTEGER2\>*&emsp;&emsp;&emsp;&emsp;# INTEGER1 is numerically greater than INTEGER2   
+*\<INTEGER1\>* -lt *\<INTEGER2\>*&emsp;&emsp;&emsp;&emsp;# INTEGER1 is numerically less than INTEGER2   
+*\<INTEGER1\>* -ge *\<INTEGER2\>*&emsp;&emsp;&emsp;&emsp;# INTEGER1 is numerically greater than or equal to INTEGER2   
+*\<INTEGER1\>* -le *\<INTEGER2\>*&emsp;&emsp;&emsp;&emsp;# INTEGER1 is numerically less than or equal to INTEGER2   
+-e *\<FILE\>*&emsp;&emsp;&emsp;&emsp;# FILE exists.    
+-s *\<FILE\>*&emsp;&emsp;&emsp;&emsp;# FILE exists and it's size is greater than zero (ie. it is not empty).   
 
 
 ## Flow control
@@ -182,6 +182,31 @@ There are other ways to optimize the path command execution takes through a scri
 
 ### 1) If
 
-### 2) Elsif
+>**if [** *\<some test\>* **]**   
+>**then**   
+>&emsp;&emsp;&emsp;&emsp;*\<commands\>*   
+>**fi**   
 
-### 3) Else
+
+### 2) Else
+
+>**if [** *\<some test\>* **]**   
+>**then**   
+>&emsp;&emsp;&emsp;&emsp;*\<commands\>*   
+>**else**    
+>&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
+>**fi**   
+
+
+
+### 3) Elif
+
+>**if [** *\<some test\>* **]**   
+>**then**   
+>&emsp;&emsp;&emsp;&emsp;*\<commands\>*   
+>**elif [** *\<some different test\>* **]**   
+>**then**   
+>&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
+>**else**    
+>&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
+>**fi**   
