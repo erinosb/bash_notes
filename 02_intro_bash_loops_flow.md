@@ -182,6 +182,8 @@ There are other ways to optimize the path command execution takes through a scri
 
 ### 1) If
 
+If statements allow us to modify our code to only execute dcommands IF a particular test is true. If a particular test is true, then perform a given set of actions. If it is not true then don't perform those actions. 
+
 >**if [** *\<some test\>* **]**   
 >**then**   
 >&emsp;&emsp;&emsp;&emsp;*\<commands\>*   
@@ -189,6 +191,8 @@ There are other ways to optimize the path command execution takes through a scri
 
 
 ### 2) Else
+
+ELSE statements can follow IF statements if you want to chose to execute particular blocks of code in a dichotomous way. If the statement is true, the IF commands will be executed, if the statement is not true, the ELSE commands will be executed. 
 
 >**if [** *\<some test\>* **]**   
 >**then**   
@@ -200,6 +204,8 @@ There are other ways to optimize the path command execution takes through a scri
 
 
 ### 3) Elif
+
+If you want to have things a littl e more complicated, use ELIF after IF statements or in combination with both IF and ELSE to create a decision tree. The tests for IF and ELIF should, of course, be different and ideally mutually exclusive. Note that in cases where the tests are not mutually exclusive, bash scripting is read top down so the first test that is satisfied is the one that will be executed.
 
 >**if [** *\<some test\>* **]**   
 >**then**   
