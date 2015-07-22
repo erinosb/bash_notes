@@ -249,6 +249,24 @@ To illustrate the difference between single and double quotes, check this out:
     echo $favoritecolor         #outputs:   red
 ```
 
+
+
+**Curly brackets**          **{**
+
+OK, these aren't quite quotes, but they help when quoting. Say you have a variable called $file that has the value 150702\_analysis and you want to dereference that variable to make the output 150702\_analysis\_log.txt and 150702\_analysis\_matrix.xlsx you are going to confuse things. If you want to put the value right up next to some text, use the curly brackets to explicitly dereference the variable:
+
+```bash
+    file=150702_analysis
+    echo -e "Will save output as ${file}_log.txt and ${file}_matrix.xlsx"
+```
+    
+This will output:
+```
+Will save output as 150702_analysis_log.txt and 150702_analysis_matrix.xlsx"
+```
+
+
+
 ## Commands
 
 Any shell command you give on the command line should work inside of a bash script.
