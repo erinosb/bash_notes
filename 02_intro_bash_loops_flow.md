@@ -1,6 +1,7 @@
 # Bash Scripting Cheatsheet
 
-## A word about tests
+
+
 
 ## Loops
 
@@ -141,6 +142,36 @@ file3.txt
 ```
 
 The python-style for loop is probably the most common loop you'll end up using. However, there are times when having a counter can come in useful. So it is not ideal for all tasks.
+
+## A word about tests
+
+Before we get deep into flow control, we're going to need to learn about **tests**. Tests are statements we can give to the bash program to ask it whether something is true or false. Tests in bash typically happen between square brackets **[ and  ]**. We have seen one example of this already. In the **while** loop, there is a square bracket test we performed that looked like this...
+
+```bash
+    while [ $counter -le 2 ]    # Start a while loop that will go AS LONG AS $counter is Less than or Equal to 2
+    do                          
+        echo $counter           # Print what $counter is set to
+        (($counter++))          # Add one to the counter
+    done   
+    
+```
+
+In that exampel `[$counter -le 2]` is a test. If $counter points to a value less than or equal to 2, the test is **TRUE** and the loop continues. If it is greater than 2, the test is **FALSE** and the while loop beraks.
+
+When we start doing *if* and *else* statements, we'll do more tests. Here are some tests that can go between square brackets:
+
+! *\<EXPRESSION\>*              # The EXPRESSION is false.   
+-n *\<STRING\>*                 # The length of STRING is greater than zero.   
+-z *\<STRING\>*	                # The lengh of STRING is zero (ie it is empty).   
+*\<STRING1\>* = *\<STRING2\>*	# STRING1 is equal to STRING2   
+*\<STRING1\>* != *\<STRING2\>*            # STRING1 is not equal to STRING2   
+*\<INTEGER1\>* -eq *\<INTEGER2\>*	# INTEGER1 is numerically equal to INTEGER2   
+*\<INTEGER1\>* -gt *\<INTEGER2\>*	# INTEGER1 is numerically greater than INTEGER2   
+*\<INTEGER1\>* -lt *\<INTEGER2\>*	# INTEGER1 is numerically less than INTEGER2   
+*\<INTEGER1\>* -ge *\<INTEGER2\>*	# INTEGER1 is numerically greater than or equal to INTEGER2   
+*\<INTEGER1\>* -le *\<INTEGER2\>*	# INTEGER1 is numerically less than or equal to INTEGER2   
+-e *\<FILE\>*	                            # FILE exists.    
+-s *\<FILE\>*               # FILE exists and it's size is greater than zero (ie. it is not empty).   
 
 
 ## Flow control
