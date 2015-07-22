@@ -1,5 +1,15 @@
 # Bash Scripting Cheatsheet
 
+**[Loops]   
+&emsp;&emsp;&emsp;&emsp;1) While Loop   
+&emsp;&emsp;&emsp;&emsp;2) C-style for loop   
+&emsp;&emsp;&emsp;&emsp;3) Python-style loop   
+A word about tests   
+Flow Control   
+&emsp;&emsp;&emsp;&emsp;1) If   
+&emsp;&emsp;&emsp;&emsp;2) Elif   
+&emsp;&emsp;&emsp;&emsp;3) Else   
+Case**   
 
 
 
