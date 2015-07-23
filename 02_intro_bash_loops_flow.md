@@ -199,6 +199,17 @@ If statements allow us to modify our code to only execute dcommands IF a particu
 >&emsp;&emsp;&emsp;&emsp;*\<commands\>*   
 >**fi**   
 
+Example: Imagine ask the user for their age. If they are over 21, let them in the club.
+
+```bash
+echo -e "How old are you?"
+read age
+if [ $age -ge 21 ]
+then
+    echo -e "Welcome to the club!"
+fi
+```
+
 
 ### 2) Else
 
@@ -211,7 +222,17 @@ ELSE statements can follow IF statements if you want to chose to execute particu
 >&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
 >**fi**   
 
+```bash
+echo -e "How old are you?"
+read age
+if [ $age -ge 21 ]
+then
+    echo -e "Welcome to the club!"
+else
+    echo - "Scram, kid!"
+fi
 
+```
 
 ### 3) Elif
 
@@ -227,6 +248,19 @@ If you want to have things a littl e more complicated, use ELIF after IF stateme
 >&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
 >**fi**   
 
+```bash
+echo -e "How old are you?"
+read age
+if [ $age -ge 21 ] && [ $age -lt 65 ]
+then
+    echo -e "Welcome to the club!"
+elif [ $age -ge 65 ] 
+then
+    echo -e "Welcome to the club! You get a senior discount!"
+else 
+    echo -e "Scram, kid!"
+fi
 
+```
 
 
