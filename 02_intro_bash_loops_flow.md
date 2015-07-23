@@ -9,7 +9,7 @@
 &emsp;&emsp;&emsp;&emsp;[1) If](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-if)    
 &emsp;&emsp;&emsp;&emsp;[2) Elif](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-elif)   
 &emsp;&emsp;&emsp;&emsp;[3) Else](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-else)   
-[Case](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#case)**   
+
 
 
 
@@ -227,4 +227,6 @@ If you want to have things a littl e more complicated, use ELIF after IF stateme
 >&emsp;&emsp;&emsp;&emsp;*\<different commands\>*   
 >**fi**   
 
-## Case
+
+
+
