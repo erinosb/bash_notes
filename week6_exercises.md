@@ -60,7 +60,7 @@ Download the tarball htsf\_demo\_dataset.tar.gz. This contains a bunch of exampl
 
 Can you write a script called transformTxtToFastq.sh that does the following...
   1. unzips each .txt.gz file.
-  2. renames each .txt file so that the new file extension is .fastq (example:  JM1357\_UNC9\_1.txt will become JM1357\_UNC9\_1.fastq)
+  2. renames each .txt file so that the new file extension is .fastq (example:  Gm10847\_R1\_red\_head.txt.gz will become Gm10847\_R1\_red\_head.fastq.gz)
   3. Re-zips the .fastq files to .fastq.gz
 
 
@@ -73,8 +73,8 @@ The fastx\_toolkit has a function called fastx\_to\_fasta. This utility has a lo
 >**$ fastq_to_fastq -i** *\<infile.fastq\>* **-o** *\<outfile.fa\>*
 
 
-Write a script called fastqToFastq.sh that loops through all the fastq files in the directory htsf\_demo\_dataset.tar.gz and converts them to fastq files with the same root name but in a new folder:   
-**JM1357\_UNC9\_1.fastq** will become **fasta\_files/JM1357\_UNC9\_1.fa**
+Write a script called fastqToFastq.sh that loops through all the fastq files in the directory htsf\_demo\_dataset.tar.gz, makes a copy of the .fastq file in a folder called fastq_files, then converts the fastq files to fasta files with the same root name but in a new folder:   
+**Gm10847\_R1\_red\_head.fastq** will become **fasta_files/Gm10847\_R1\_red\_head.fa**
 
 
 
