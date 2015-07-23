@@ -8,7 +8,7 @@
 [Flow Control](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#flow-control)   
 &emsp;&emsp;&emsp;&emsp;[1) If](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-if)    
 &emsp;&emsp;&emsp;&emsp;[2) Elif](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-elif)   
-&emsp;&emsp;&emsp;&emsp;[3) Else]**(http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-else)   
+&emsp;&emsp;&emsp;&emsp;[3) Else](http://github.com/erinosb/bash_notes/blob/master/02_intro_bash_loops_flow.md#1-else)**   
 
 
 
