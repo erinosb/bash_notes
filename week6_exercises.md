@@ -88,5 +88,17 @@ Follow the examples of how to produce two really pretty barplots using fastx\_to
 Write a script with a loop in it to produce the two plots for each of your .fastq files in the htsf\_demo\_dataset.
 
 
+### Flow control
 
+#### Usage statements.
+Usage statements are typically paragraphs of information that are spit out when you try to execute a script with no arguments. 
+For example, load the module bedtools and then look at what happens when you just execute:
+
+```
+$ bedtools 
+#OR
+$ bedtools getfasta
+```
+
+Begin a script called generateFactorFastas.sh. If no arguments are supplied to generateFactorFastas.sh, have it spit out a usage statement based on what you know about how this script should run in the [instructions for the group project](http://github.com/erinosb/bash_workshop_project/blob/master/instructions.md)
 
