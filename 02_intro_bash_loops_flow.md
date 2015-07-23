@@ -166,7 +166,7 @@ Before we get deep into flow control, we're going to need to learn about **tests
     
 ```
 
-In that exampel `[$counter -le 2]` is a test. If $counter points to a value less than or equal to 2, the test is **TRUE** and the loop continues. If it is greater than 2, the test is **FALSE** and the while loop beraks.
+In that exampel `[ $counter -le 2 ]` is a test. If $counter points to a value less than or equal to 2, the test is **TRUE** and the loop continues. If it is greater than 2, the test is **FALSE** and the while loop beraks.
 
 When we start doing *if* and *else* statements, we'll do more tests. Here are some tests that can go between square brackets:
 
@@ -183,6 +183,7 @@ When we start doing *if* and *else* statements, we'll do more tests. Here are so
 -e *\<FILE\>*&emsp;&emsp;&emsp;&emsp;# FILE exists.    
 -s *\<FILE\>*&emsp;&emsp;&emsp;&emsp;# FILE exists and it's size is greater than zero (ie. it is not empty).   
 
+*NOTE: Sometimes bash gets VERY MAD if you omit the spaces between the content and the brackets. I know, it's lame. But sometimes, it can't figure out `[$var -lt 10]` only `[ $var -l 10 ]`. Go figure.
 
 ## Flow control
 
