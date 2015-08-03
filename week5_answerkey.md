@@ -223,9 +223,44 @@ echo -e "${rootfile}.fastq"
 + Can you save a column of information as an array? Make sure to test that you have captured the expected number of individual elements. Also test that ${array[1]} gives you what you expect. 
 + If you need a sample file, try Scerevisiae_TFs.csv from a previous homework exercise.
 
+**getColumn.sh**
+```bash
+#!/bin/bash
 
+#Get files
+file=$1
+
+#Get column
+idarray=($(cut -d ',' -f 1 $file | tail -n +2 ))
+
+echo -e "${#idarray[@]}"
+echo -e "${idarray[0]}"
+echo -e "${idarray[1]}"
+```
 
   
+** On the command line, this looks like **
+```
 
+$ head Scerevisiae_TFs.csv 
+"ID","Name","Species","GeneID","Family","Evidence"
+"T000176_1.01","ABF1","Saccharomyces_cerevisiae","YKL112W","ABF1","D"
+"T000387_1.01","AFT1","Saccharomyces_cerevisiae","YGL071W","AFT","D"
+"T000388_1.01","AFT2","Saccharomyces_cerevisiae","YPL202C","AFT","D"
+"T005322_1.01","MBP1","Saccharomyces_cerevisiae","YDL056W","APSES","D"
+"T005325_1.01","PHD1","Saccharomyces_cerevisiae","YKL043W","APSES","D"
+"T005326_1.01","SOK2","Saccharomyces_cerevisiae","YMR016C","APSES","D"
+"T005323_1.01","SWI4","Saccharomyces_cerevisiae","YER111C","APSES","D"
+"T005324_1.01","XBP1","Saccharomyces_cerevisiae","YIL101C","APSES","D"
+"T008770_1.01","SUM1","Saccharomyces_cerevisiae","YDR310C","AT hook","D"
+
+$ wc Scerevisiae_TFs.csv 
+  255   359 18872 Scerevisiae_TFs.csv
+  
+$ bash getColumn.sh Scerevisiae_TFs.csv 
+254
+"T000176_1.01"
+"T000387_1.01"
+```
 
 
