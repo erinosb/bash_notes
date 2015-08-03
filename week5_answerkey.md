@@ -78,6 +78,18 @@ echo -e "You have ${#labMembers} in your lab. Members are ${labMembers[@]}."
 ### Special variables
 
 + Open up labMembers.sh and comment out the line where you assigned your array variable labMembers (put a # sign in front of this line). Instead, feed the script the name of your lab members as arguments when you execute the script like so:
++ 
+### Special variables -- ANSWER
+
+```bash
+#!/bin/bash
+
+#People in my lab
+
+labMembers=($@)
+
+echo -e "You have ${#labMembers} in your lab. Members are ${labMembers[@]}."
+```
 
 ```
 $ bash labMembers.sh Max Sheera Adam Sophie Matt Erin
