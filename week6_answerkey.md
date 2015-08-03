@@ -201,7 +201,7 @@ $ fastq_to_fasta -h
 >**$ fastq_to_fasta -i** *\<infile.fastq\>* **-o** *\<outfile.fa\>* #Note, there was a bug here before. It was previously misspelled as fastq_to_fastq.
 
 
-Write a script called fastqToFastq.sh that loops through all the fastq files in the directory htsf\_demo\_dataset and converts the fastq files to fasta files with the same root name but in a new folder:   
+Write a script called fastqToFasta.sh that loops through all the fastq files in the directory htsf\_demo\_dataset and converts the fastq files to fasta files with the same root name but in a new folder:   
 **Gm10847\_R1\_red\_head.fastq** will become **fasta_files/Gm10847\_R1\_red\_head.fa**
 
 NOTE: Test this to make sure how it works. Make sure to retain a copy of the .fastq files for the extra credit exercise below.
