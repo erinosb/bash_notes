@@ -81,6 +81,27 @@ Your arguments are:
   $6 ncRNA
 ```
 
+```bash
+#!/bin/bash
+
+
+
+#Capture arguments in an array
+arguments=($@)
+
+#Initiate a counter
+counter=0
+
+#Start a while loop that runs for the number of elements in the arguments array
+while [ $counter -lt ${#arguments[@]} ]
+do
+    echo "${arguments[$counter]}"
+    ((counter++))  #Note, my notes previously had a bug and this was written $((counter++)) which will not work. counter=$((counter+1)) will work, however.
+done
+```
+
+
+
 
 ### for loop -- python style loop
 #### 3. Element Names: 
