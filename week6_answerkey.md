@@ -206,6 +206,73 @@ Write a script called fastqToFasta.sh that loops through all the fastq files in 
 
 NOTE: Test this to make sure how it works. Make sure to retain a copy of the .fastq files for the extra credit exercise below.
 
+#### FASTX TOOLKIT -- ANSWER
+
+OK, this was a little trickier than I envisioned. Hopefully some googling will help the process along!
+
+There are many ways to do this. Here is what I landed on...
+
+```
+# Write the program 
+$ pwd 
+/<myhomedirectory/06_week6/
+
+$ ls -lh
+-rw-r--r-- 1 erinosb employee 1.6K Aug  3 13:41 fastqToFasta.sh
+drwxr-xr-x 2 erinosb employee 4.0K Aug  3 13:36 htsf_demo_dataset
+
+# Call the function fastqToFasta.sh like so...
+
+$ bsub -q week -n 1 -o %J.log "bash fastqToFasta.sh Gm10847_R1_red_head.fastq.gz Gm12753_R2_red_head.fastq.gz Gm12832_R1_red_head.fastq.gz Gm10847_R2_red_head.fastq.gz Gm12801_R1_red_head.fastq.gz Gm12832_R2_red_head.fastq.gz Gm10851_R1_red_head.fastq.gz Gm12801_R2_red_head.fastq.gz Gm12864_R1_red_head.fastq.gz Gm10851_R2_red_head.fastq.gz Gm12802_R1_red_head.fastq.gz Gm12864_R2_red_head.fastq.gz Gm12752_R1_red_head.fastq.gz Gm12802_R2_red_head.fastq.gz Gm12877_R1_red_head.fastq.gz Gm12752_R2_red_head.fastq.gz Gm12818_R1_red_head.fastq.gz Gm12877_R2_red_head.fastq.gz Gm12753_R1_red_head.fastq.gz Gm12818_R2_red_head.fastq.gz"
+
+
+#There are other ways to do this. You could hard code the filenames into the code. You could read them from a separate file. or your could use *.fastq.gz or $ ls htsf_demo_dataset to get the list
+```
+
+Here is the code I came up with:
+
+```bash
+#!/bin/bash
+
+#Write a script called fastqToFasta.sh that loops through all the fastq files in the directory htsf_demo_dataset and converts the fastq files to fasta files with the same root name but in a new folder:
+#Gm10847_R1_red_head.fastq will become fasta_files/Gm10847_R1_red_head.fa
+
+
+### USAGE   ####
+#bsub -q week -n 1 -o %J.log "bash fastqToFasta.sh Gm10847_R1_red_head.fastq.gz Gm12753_R2_red_head.fastq.gz Gm12832_R1_red_head.fastq.gz Gm10847_R2_red_head.fastq.gz Gm12801_R1_red_head.fastq.gz Gm12832_R2_red_head.fastq.gz Gm10851_R1_red_head.fastq.gz Gm12801_R2_red_head.fastq.gz Gm12864_R1_red_head.fastq.gz Gm10851_R2_red_head.fastq.gz Gm12802_R1_red_head.fastq.gz Gm12864_R2_red_head.fastq.gz Gm12752_R1_red_head.fastq.gz Gm12802_R2_red_head.fastq.gz Gm12877_R1_red_head.fastq.gz Gm12752_R2_red_head.fastq.gz Gm12818_R1_red_head.fastq.gz Gm12877_R2_red_head.fastq.gz Gm12753_R1_red_head.fastq.gz Gm12818_R2_red_head.fastq.gz"
+
+
+#Get the files to process
+filenames=($@)
+
+#Make a new directory
+mkdir fasta_files
+
+for fastqFile in ${filenames[@]}
+do
+    #Report the fastq file to process:
+    echo -e "$fastqFile"
+    
+    #Make a backup file:
+    bkpFile=${fastqFile}.bkp
+    echo -e "\t\tbackup file is $bkpFile"
+    cp htsf_demo_dataset/${fastqFile} htsf_demo_dataset/$bkpFile
+    
+    #Decompress the gzipped fastq file:
+    unzipFastqFile=${fastqFile/.gz/}
+    echo -e "\t\tUnzipped file is $unzipFastqFile"
+    gunzip htsf_demo_dataset/$fastqFile
+    
+    #Make a fasta file:
+    faFile=${unzipFastqFile/%.fastq/.fa}
+    echo -e "\t\tfaFile is $faFile"
+    
+    #Convert the file from fastq to fasta using the fastx_toolkit utility
+    fastq_to_fasta -Q33 -i htsf_demo_dataset/$unzipFastqFile -o fasta_files/$faFile
+    
+done
+
+```
 
 #### 6 FASTX_TOOLKIT EXTRA CREDIT:
 
