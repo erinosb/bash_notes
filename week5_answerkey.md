@@ -224,6 +224,7 @@ echo -e "${rootfile}.fastq"
 + If you need a sample file, try Scerevisiae_TFs.csv from a previous homework exercise.
 
 **getColumn.sh**
+
 ```bash
 #!/bin/bash
 
@@ -240,6 +241,8 @@ echo -e "${idarray[1]}"
 
   
 ** On the command line, this looks like **
+
+
 ```
 
 $ head Scerevisiae_TFs.csv 
