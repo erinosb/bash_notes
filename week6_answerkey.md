@@ -19,6 +19,43 @@ Write a while loop that prints out the following...
 blast off!
 ```
 
+#### While Loop -- ANSWER
+
+```bash
+
+#!/bin/bash
+
+# type out blastoff
+
+counter=10
+
+while [ $counter -gt 0 ]
+do
+    echo $counter
+    counter=$((counter-1))
+done
+
+echo "blast off!!!"
+```
+
+**OR, this also works***
+
+```bash
+#!/bin/bash
+
+# type out blastoff
+
+counter=10
+
+while [ $counter -ge 1 ]
+do
+    echo $counter
+    counter=$((counter-1))
+done
+
+echo "blast off!!!"
+```
+
 #### 2. Argument reporting: 
 You can find the length of an array using the notation: 
 ```bash
