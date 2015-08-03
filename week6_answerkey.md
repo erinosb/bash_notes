@@ -193,6 +193,10 @@ Load the module fastx_toolkit. Read about fastx_toolkit on  [the fastx_toolkit w
 
 The fastx\_toolkit has a function called fastx\_to\_fasta. This utility has a lot of possible bells and whistles, but the code is quite simple once you strip it down. Simply execute the command:
 
+```bash
+$ module load fastx_toolkit/0.0.13.2 
+$ fastq_to_fasta -h
+```
 
 >**$ fastq_to_fasta -i** *\<infile.fastq\>* **-o** *\<outfile.fa\>* #Note, there was a bug here before. It was previously misspelled as fastq_to_fastq.
 
