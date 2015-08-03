@@ -194,7 +194,7 @@ Load the module fastx_toolkit. Read about fastx_toolkit on  [the fastx_toolkit w
 The fastx\_toolkit has a function called fastx\_to\_fasta. This utility has a lot of possible bells and whistles, but the code is quite simple once you strip it down. Simply execute the command:
 
 
->**$ fastq_to_fastq -i** *\<infile.fastq\>* **-o** *\<outfile.fa\>*
+>**$ fastq_to_fasta -i** *\<infile.fastq\>* **-o** *\<outfile.fa\>* #Note, there was a bug here before. It was previously misspelled as fastq_to_fastq.
 
 
 Write a script called fastqToFastq.sh that loops through all the fastq files in the directory htsf\_demo\_dataset and converts the fastq files to fasta files with the same root name but in a new folder:   
