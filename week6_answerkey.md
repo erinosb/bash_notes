@@ -81,10 +81,10 @@ Your arguments are:
   $6 ncRNA
 ```
 
+#### Argument reporting -- answer
+
 ```bash
 #!/bin/bash
-
-
 
 #Capture arguments in an array
 arguments=($@)
@@ -101,8 +101,6 @@ done
 ```
 
 
-
-
 ### for loop -- python style loop
 #### 3. Element Names: 
 Write a python style loop that loops through this array and prints out the names of of each element:
@@ -112,6 +110,20 @@ examplearray=(gene1 gene2 gene3 gene4 gene5 gene6);
 
 #Write a for loop to print out each element of the array
 ```
+#### Element Names -- ANSWER
+
+```bash
+#!/bin/bash
+
+examplearray=(gene1 gene2 gene3 gene4 gene5 gene6);
+
+#Write a for loop to print out each element of the array
+for n in ${examplearray[@]}
+do
+    echo $n
+done
+```
+
 
 #### 4. TXT to FASTQ: 
 Download the tarball htsf\_demo\_dataset.tar.gz. This contains a bunch of example deep sequencing files from the UNC Sequencing facility. Typically, UNC gives you your results as .txt.gz even though these are fastq files. If you are not familiar with fastq files (the standard deep sequencing output file) you can read about it [here](https://en.wikipedia.org/wiki/FASTQ_format).
