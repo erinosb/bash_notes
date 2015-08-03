@@ -274,6 +274,19 @@ done
 
 ```
 
+**NOTE** There is no mention of the -Q33 argument on the fastq_to_fasta manual page ($ fastq_to_fasta -h). So when I ran the original code without the -Q33 argument, i got this error message:
+
+```
+fastq_to_fasta: Invalid quality score value (char ')' ord 41 quality value -23) 
+```
+
+When I copied that sentence and google searched it, I got the following webpage which describes the -Q33 argument. This type of run-around, sadly, is typical.
+
+[http://seqanswers.com/forums/showthread.php?t=7596](http://seqanswers.com/forums/showthread.php?t=7596)
+
+
+
+
 #### 6 FASTX_TOOLKIT EXTRA CREDIT:
 
 Follow the examples of how to produce two really pretty barplots using fastx\_toolkit in [its online manual] (http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastq_info_example)
