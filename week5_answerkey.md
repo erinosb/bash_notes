@@ -21,6 +21,36 @@
     My favorite Enzyme is _____.
 ```
 
+
+## ANSWER
+
+```bash
+#!/bin/bash
+
+# A list of my favorite things
+
+# assign values to the following variables that correspond to your favorite things
+name="Erin Osborne Nishimura"
+favoriteFood="guacamole"
+favoriteBook="Jane Eyre"
+favoriteMovie="Howard and Maude"
+favoriteEnzyme="DNA Polymerase"
+
+#Now have the script output the following statements with your values filling in the blanks:
+echo -e "My name is $name."
+echo -e "My favorite food is $favoriteFood."
+echo -e "My favorite Book is $favoriteBook."
+echo -e "My favorite Movie is $favoriteMovie."
+echo -e "My favorite Enzyme is $favoriteEnzyme."
+
+#Alternatively, this is also a good technique. The curly brackets explicitly put your variable names in parentheses and avoid confusion with any of the surrounding text.
+echo -e "My name is ${name}."
+echo -e "My favorite food is ${favoriteFood}."
+echo -e "My favorite Book is ${favoriteBook}."
+echo -e "My favorite Movie is ${favoriteMovie}."
+echo -e "My favorite Enzyme is ${favoriteEnzyme}."
+```
+
 ## Array variables
 + write a script called **labMembers.sh**
 + within this script, assign values to an array variable that corresponds to the names of people in your lab. 
