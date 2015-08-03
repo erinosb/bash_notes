@@ -62,6 +62,18 @@ echo -e "My favorite Enzyme is ${favoriteEnzyme}."
   For example, mine would be: "You have 6 people in your lab. Members are Sheera, Max, Sophie, Adam, Matt, and Erin."
   
   The tricky part will be to figure out how you would have the script count the number of elements in your array? Google search this to find it out.
+  
+## Array variables -- ANSWER
+
+```bash
+#!/bin/bash
+
+#People in my lab
+
+labMembers=(Sheera Max Matt Erin Adam Sophie)
+
+echo -e "You have ${#labMembers} in your lab. Members are ${labMembers[@]}."
+```
 
 ### Special variables
 
