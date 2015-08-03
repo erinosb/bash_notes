@@ -53,7 +53,7 @@ Typically, start with a numberic counter, set it to 0, then start the loop. At t
         echo ${files[$counter]} # Print the element of files associated with the $counter value
         wc ${files[$counter]}   # Count the number of words in that file
         echo -e "\n"
-        $((counter++))          # Add one to the counter
+        ((counter++))          # Add one to the counter  !!! Note, there was previously a bug here. I accidentally wrote $((counter++)) before. Apologies
     done            
 ```
 
