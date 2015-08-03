@@ -108,6 +108,28 @@ The variable $favoriteMovie has the value ____.
 The variable $favoriteEnzyme has the value ____.
 ```
 
+### Quoting -- ANSWER
+
+```bash
+#!/bin/bash
+
+# A list of my favorite things
+
+# assign values to the following variables that correspond to your favorite things
+name="Erin Osborne Nishimura"
+favoriteFood="guacamole"
+favoriteBook="Jane Eyre"
+favoriteMovie="Howard and Maude"
+favoriteEnzyme="DNA Polymerase"
+
+#Now have the script output the following statements with your values filling in the blanks:
+echo -e "The variable \$name is $name."
+echo -e "The variable \$favoriteFood is $favoriteFood."
+echo -e "The variable \$favoriteBook is $favoriteBook."
+echo -e "The variable \$favoriteMovie is $favoriteMovie."
+echo -e "The variable \$favoriteEnzyme is $favoriteEnzyme."
+```
+
 ## Homework exercise-5-1
 
 + Download the file microscopy.tar.gz from the [week5 wepage](http://onish.web.unc.edu/week5)
