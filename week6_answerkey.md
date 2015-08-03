@@ -135,6 +135,58 @@ Can you write a script called transformTxtToFastq.sh that does the following...
   3. counts the total lines in the file.
   3. Re-zips the .fastq files to .fastq.gz.
 
+#### TXT to FASTQ -- ANSWER
+
+```bash
+#/bin/bash
+
+#Can you write a script called transformTxtToFastq.sh that does the following...
+#
+#unzips each .txt.gz file.
+#renames each .txt file so that the new file extension is .fastq (example: Gm10847_R1_red_head.txt will become Gm10847_R1_red_head.fastq)
+#prints out the first 8 lines of the file.
+#counts the total lines in the file.
+#Re-zips the .fastq files to .fastq.gz.
+
+files=($@)
+
+echo "${#files[@]}"
+
+for txtgzfile in ${files[@]}
+do
+    
+    echo -e "$txtgzfile."
+    
+    #unzips each .txt.gz file.
+        echo -e "\t\tUnzipping $txtgzfile."
+        gunzip $txtgzfile
+    
+    #renames each .txt file so that the new file extension is .fastq (example: Gm10847_R1_red_head.txt will become Gm10847_R1_red_head.fastq)
+        txtfile=${txtgzfile/.gz/}
+        #echo -e "\t\ttext file is $txtfile"
+        fastqfile=${txtfile/%.txt/.fastq}
+        #echo -e "\t\fastqfile file is $fastqfile"
+    
+        echo -e "\t\tRenaming $txtfile as $fastqfile."
+        mv $txtfile $fastqfile
+        
+    #prints out the first 8 lines of the file.
+        echo -e "\t\tThe first lines of $fastqfile are:"
+        head -n 8 $fastqfile
+        
+    #counts the total lines in the file.
+        numlines=$(wc -l $fastqfile)
+        echo -e "\t\tThe file $fastqfile contains $numlines lines."
+        
+    #Re-zips the .fastq files to .fastq.gz.
+        echo -e "\t\tCompressing $fastqfile to ${fastqfile}.gz."
+        gzip $fastqfile
+    
+        
+        
+done
+
+```
 
 #### 5. FASTX_TOOLKIT
 Load the module fastx_toolkit. Read about fastx_toolkit on  [the fastx_toolkit website](http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastq_statistics_usage).
