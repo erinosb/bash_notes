@@ -193,6 +193,29 @@ done
 + Write a script called **TxtToFastq.sh** that takes in an a text file (file1.txt) as an argument and prints to the screen the name **file1.fastq**.
 + This seems like it should be easy but it is a little tricky for one reason... bash gets confused about how to *echo* or *printf* things that have characters right next to the output with no spaces.
 + Try using the notation ${variable} instead of $variable when you *echo* or *prinf* and see whether this helps.
++ 
+```bash
+#!/bin/bash
+
+#First method:
+#take in file1.txt and print to screen file1.fastq
+
+file=$1
+
+newfile=${file/%.txt/.fastq}
+
+echo $newfile
+
+
+
+#Second method:
+#take in file1.txt and print to screen file1.fastq
+
+file=$1
+
+newfile=${file%%.txt}
+echo -e "${newfile}.fastq"
+```
 
 ## Homework exercise-5-3
 + Imaginge you have a tab delimited file or a comma delimited file. These files typically contain spread-sheet like data. You can save a 'column' of information as an array by combining the 'cut' function with the notation:
