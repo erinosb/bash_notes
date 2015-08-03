@@ -213,8 +213,8 @@ echo $newfile
 
 file=$1
 
-newfile=${file%%.txt}
-echo -e "${newfile}.fastq"
+rootfile=${file%%.txt}
+echo -e "${rootfile}.fastq"
 ```
 
 ## Homework exercise-5-3
