@@ -370,36 +370,36 @@ Some cool tricks:
 >**Subset a string**   
 >*\<newvarname\>***=${***\<oldvarname\>***:***\<n\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $var string starting at nth letter.   
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar:3}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **newvar=${oldvar:3}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "ifornia"  
 >  
 >**Subset a string of specific length**   
 >*\<newvarname\>***=${***\<oldvarname\>***:***\<n\>***:***\<length\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that corresponds to the $oldvar string starting at nth letter and going for "length" letters.  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar:3:4}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **newvar=${oldvar:3:4}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "ifor"  
 >   
 >**Replace a sub-string**   
 >*\<newvarname\>***=${***\<oldvarname\>***/***\<pattern\>***/***\<replacement\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces one instance of "pattern" in $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar/nia/nian}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **newvar=${oldvar/nia/nian}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "Californian"  
 >   
 >**Globally replace a sub-string**   
 >*\<newvarname\>***=${***\<oldvarname\>***//***\<pattern\>***/***\<replacement\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces **ANY** instance of "pattern" in $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar//a/A}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **newvar=${oldvar//a/A}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "California" $newvar is "CAliforniA"  
 >   
 >**Replace a prefix**   
 >*\<newvarname\>***=${***\<oldvarname\>***/#***\<pattern\>***/***\<replacement\>***}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces "pattern" at the BEGINNING of the string $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar/#To/So}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **newvar=${oldvar/#To/So}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "To be or not to be" $newvar is "So be or not to be"  
 >   
 >**Replace a suffix**   
 >*\<newvarname\>***=${***\<oldvarname\>***/%***\<pattern\>***/***\<replacement\>***}** 
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new variable $newvar that replaces "pattern" at the END of the string $oldvar with "replacement".  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **$newvar=${oldvar/%txt/fastq}**  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: **newvar=${oldvar/%txt/fastq}**  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: If $oldvar is "file1.txt" $newvar is "file1.fastq"  
 >
